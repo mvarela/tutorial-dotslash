@@ -22,9 +22,11 @@ concepts.
 The most noticeable departure from the Ring standard approach we'll take, is
 that instead of using
 [middleware](https://github.com/ring-clojure/ring/wiki/Middleware-Patterns), we
-will use [interceptors]() instead. This is largely a matter of personal
-preference, but I think they gel better with Clojure's _it's just data_
-philosophy, and also with Reitit data-driven approach to routing.
+will use
+[interceptors](https://quanttype.net/posts/2018-08-03-why-interceptors.html)
+instead. This is largely a matter of personal preference, but I think they gel
+better with Clojure's _it's just data_ philosophy, and also with Reitit
+data-driven approach to routing.
 
 
 ## Other dependencies
