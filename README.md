@@ -31,6 +31,8 @@ endpoint for rendering a pretty version of the article and its comments
 We will create a "reference" branch for each tutorial session, and progressively
 add more features as we cover different topics.
 
+Checkout the relevant session branch, and have a look under the `doc` directory
+
 ### Practicalities
 
 Run the project's tests (they'll fail until you edit them):
