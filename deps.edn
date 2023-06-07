@@ -1,10 +1,21 @@
 {:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.11.1"}}
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        org.clojure/data.json {:mvn/version "2.4.0"}
+        org.clojure/tools.logging {:mvn/version "1.2.4"}
+        camel-snake-kebab/camel-snake-kebab {:mvn/version "0.4.3"}
+        hiccup/hiccup {:mvn/version "1.0.5"}
+        http-kit/http-kit {:mvn/version "2.6.0"}
+        info.sunng/ring-jetty9-adapter {:mvn/version "0.18.5"}
+        metosin/malli {:mvn/version "0.10.1"}
+        metosin/reitit {:mvn/version "0.6.0"}}
  :aliases
- {:run-m {:main-opts ["-m" "clj.intro.dotslash"]}
-  :run-x {:ns-default clj.intro.dotslash
-          :exec-fn greet
-          :exec-args {:name "Clojure"}}
+ {:dev {:extra-paths ["dev"]
+        :extra-deps {nrepl/nrepl {:mvn/version "1.0.0"}
+                     cider/cider-nrepl  {:mvn/version "0.30.0"}
+                     refactor-nrepl/refactor-nrepl {:mvn/version "3.6.0"}}
+        :main-opts ["-m" "nrepl.cmdline"
+                    "--middleware"  "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}
+  :run-m {:main-opts ["-m" "clj.intro.dotslash"]}
   :build {:deps {io.github.seancorfield/build-clj
                  {:git/tag "v0.6.3" :git/sha "9b8e09b"
                   ;; since we're building an app uberjar, we do not
